@@ -157,6 +157,7 @@ nav {
 }
 .carousel_wrap  {
 
+position: relative;
 		width: 100%;
         margin-top: 5px;
         margin-bottom: 10px;
@@ -182,26 +183,21 @@ nav {
             float: left;			
 		}
 	}
-
-	.next-prev-buttons{
-	 	.prev{
-	            position:absolute;
-				height:50px;
-				width:50px;
-				top: calc(50% - 60px);
-				left: 350px;
-				cursor:pointer;
-				transform: rotate(180deg);
-	         }
-	    .next{
-	            position:absolute;
-				height:50px;
-				width:50px;
-				top: calc(50% - 60px);
-				right: 350px;
-				cursor:pointer;
-	         }
-    }
+	.prev, .next{
+		position: absolute;
+		top:50%;
+		display: block;
+		width: 50px;
+		height: 50px;
+		cursor: pointer;
+	}
+	.prev{
+		left: 10px;
+		transform: rotate(180deg);
+	}
+	.next{
+		right: 10px;
+	}
 
 }
 .warning{

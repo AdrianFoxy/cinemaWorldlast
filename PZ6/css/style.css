@@ -157,6 +157,7 @@ nav {
 }
 
 .carousel_wrap {
+  position: relative;
   width: 100%;
   margin-top: 5px;
   margin-bottom: 10px;
@@ -180,22 +181,20 @@ nav {
 .carousel_wrap .visual_block li img {
   width: 1200px;
 }
-.carousel_wrap .next-prev-buttons .prev {
+.carousel_wrap .prev, .carousel_wrap .next {
   position: absolute;
-  height: 50px;
+  top: 50%;
+  display: block;
   width: 50px;
-  top: calc(50% - 60px);
-  left: 350px;
+  height: 50px;
   cursor: pointer;
+}
+.carousel_wrap .prev {
+  left: 10px;
   transform: rotate(180deg);
 }
-.carousel_wrap .next-prev-buttons .next {
-  position: absolute;
-  height: 50px;
-  width: 50px;
-  top: calc(50% - 60px);
-  right: 350px;
-  cursor: pointer;
+.carousel_wrap .next {
+  right: 10px;
 }
 
 .warning {
