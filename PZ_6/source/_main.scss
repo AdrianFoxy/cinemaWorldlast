@@ -1,0 +1,283 @@
+@import "_variables1.scss";
+%tdublock{
+	text-decoration: underline;
+	transition: 0.5s linear; /* Время изменения */
+}
+body{
+
+	background: map-get($colors, generalBG);
+	color: map-get($colors, textcolor);
+}
+body.lock{
+	overflow: hidden;
+}
+hr{
+  	height: 2px;
+  	border: 0;
+  	background-color: orange;
+ }
+h2{
+	font-size: 30px;
+	text-align: center;
+}
+p{
+
+	word-wrap: normal; /* Перенос слов */ 
+	text-align: justify;
+	line-height: 120%; /* Высота строки */
+}
+a{
+	color: orange;
+}
+/* Таблица, Расписание */
+table{
+	text-align: center;
+	margin:auto;
+}
+caption{
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+.main_block{
+		max-width: $maxwd;
+	    margin-left: auto;
+	    margin-right: auto;
+	    .info{
+			/* постеры */
+			border: 2px solid black;
+			display: inline-block;
+			margin-left:25px;
+			margin-bottom: 25px;
+			text-align: center;
+			box-shadow: 0 0 20px rgba(0,0,0,0.5);
+			p{
+				text-align: center;
+			}
+			&:hover{
+				box-shadow:
+			    1px 1px gray,
+		        2px 2px gray,
+		        3px 3px gray,
+		        4px 4px gray,
+		        5px 5px gray;
+
+		    -webkit-transform: translateX(-5px);
+		    transform: translateX(-5px);
+			}
+		}
+		.about_cinema{
+			transform: translate(0px, 60%);
+			opacity: 0;
+		}
+		.about_cinema._active{
+			transform: translate(0px, 0px);
+			opacity: 1;
+			transition: all 0.8s ease 0s;
+		}
+		.cinema_info{
+			transform: translate(0px, 60%);
+			opacity: 0;
+		}
+		.cinema_info._active{
+			transform: translate(0px, 0px);
+			opacity: 1;
+			transition: all 0.8s ease 0s;
+		}
+
+		.text_info_about_cinema{
+			/* О кинотеатре */
+			overflow: auto;
+			float: left;
+			padding: 5px;
+			width: 550px;
+			height: 400px;
+			margin-right: 15px;
+			.list{
+				list-style-type: none;
+				&:before{
+				  content: '';
+				  background-image: url(../img/icon/mark_yes.svg);
+				  background-size: contain;  
+				  width: 20px;
+				  height: 20px;  
+				  display: inline-block; 
+				  margin-left: 20px
+				  padding 0;
+				}
+			}
+		}
+		.feedback{
+			/* Обратная связь и т.д */
+			margin-right: $fbmargin;
+			margin-left:  $fbmargin;
+			display: inline-block;
+			.a_hyperlink{
+				/* гиперссылки */
+				color: red;
+				&:hover{
+					@include cols(orange);
+					@extend %tdublock;
+					cursor: help;
+				}
+			}
+			.feedback_p{
+				text-align: center;
+			}
+		}
+}
+nav {
+	display: flex;
+	text-align: left;
+	background: #141513;
+}
+.main_menu{
+	display: block;
+	text-align: center;
+	ul{
+		.li_menu {
+		  display: inline;
+		  .img_menu{
+				text-decoration: none; /* Убрал не понятное подчеркивание у изображения */
+			}
+			.a_menu { 
+				/* меню */
+				text-decoration: none; /*Минус подчеркивание*/
+			  	margin-left:30px;
+			  	color: white;
+			  	font-size: 35px;
+			  	&:hover{
+			  		@include cols(orange);
+			  		@extend %tdublock;
+				}
+			}
+
+		}
+	}
+
+}
+.carousel_wrap  {
+
+position: relative;
+		width: 100%;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        height: 600px;
+        text-align: center;
+
+	.visual_block {
+		ul {
+			margin: 0;
+			padding: 0;
+			position: relative;
+			list-style:none;
+		}
+		li {
+			img{
+				width: 1200px;
+			}
+			margin: 0;
+			padding: 0;
+            list-style: none;
+            display: block;
+            float: left;			
+		}
+	}
+	.prev, .next{
+		position: absolute;
+		top:50%;
+		display: block;
+		width: 50px;
+		height: 50px;
+		cursor: pointer;
+	}
+	.prev{
+		left: 10px;
+		transform: rotate(180deg);
+	}
+	.next{
+		right: 10px;
+	}
+
+}
+.warning{
+	text-align: center;
+	.war_cur{
+		cursor:pointer;
+	}
+}
+.jq_staff{
+	display: flex;
+}
+#accordeon {
+  width: 350px;
+  margin: 10px;
+}
+.acc-head {
+  padding: 5px 10px;
+  background: generalBG;
+  border: 1px solid orange;
+  cursor: pointer;
+   &:hover{
+	@include cols(orange);
+  }
+}
+
+.acc-body {
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid orange;
+  display: none;
+}
+#sort_a {
+  width: 150px;
+  margin: 10px;
+  #sortable { 
+	  list-style-type: none; 
+	  width: 60%; 
+	  padding: 0;
+	  margin: 0;
+	  li{
+		  height: 18px;
+		  padding: 5px 10px;
+		  border: 1px solid orange;
+		  width: 60px;
+		  cursor:pointer;
+		  &:hover{
+			@include cols(orange);
+		  }
+	  }
+
+	}
+}
+
+#tabs{
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        ul{
+
+        	padding: 0;
+            li{
+
+                display: inline;
+                border: 2px solid orange;
+                a{
+                	outline: 0;
+                	color: white;
+                    text-decoration: none;
+                    padding: 10px;
+                    &:hover{
+			  		@include cols(orange);
+					}
+                }
+            }
+        }
+        .tab-content{
+            width: 600px;
+            p{
+                padding: 5px;
+                border: 2px solid orange;
+            }
+        }
+    }
